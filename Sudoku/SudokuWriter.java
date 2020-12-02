@@ -1,4 +1,4 @@
-package sudoku;
+package Sudoku;
 
 import java.awt.*;
 import javax.swing.*;
@@ -6,7 +6,7 @@ import javax.swing.*;
 /** SudokuWriter displays the contents of a slide puzzle */
 public class SudokuWriter extends JPanel {
 	private SudokuBoard board;
-	private InputNumber number;
+	//private InputNumber number;
 	private int board_size; //스도쿠 보드의 크기
 	private int size = 30; // 스도쿠 보드 한 칸의 크기
 	private int panel_width; // 패널의 너비
@@ -18,7 +18,7 @@ public class SudokuWriter extends JPanel {
 	 * @param s - 스도쿠 보드의 크기 */
 	public SudokuWriter(SudokuBoard b, int s) {
 		board = b;
-		number = new InputNumber();
+		//number = new InputNumber();
 		board_size = s;
 		panel_width = (board_size + 4) * size;
 		panel_height = (board_size + 2) * size;
