@@ -4,17 +4,20 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Numberbutton extends JButton implements ActionListener {
-	private InputNumber number;
-	private SudokuFrame view;
 	
-	public Numberbutton(InputNumber n, SudokuFrame v) {
+	private InputNumber number;
+	private SudokuFrame frame;
+	
+	public Numberbutton(InputNumber n, SudokuFrame f) {
 		number = n;
-		view = v;
+		frame = f;
+		addActionListener(this);
 	}
 	
 	public void actionPerformed(ActionEvent e) {
 		String s = getText();
 		number.select(Integer.parseInt(s));
-		//view.update();
+		frame.number_update(number.valueOf());
+		System.out.println(""+number.valueOf());
 	}
 }

@@ -1,4 +1,4 @@
-package Sudoku;
+package sudoku;
 
 import javax.swing.*;
 
@@ -105,8 +105,16 @@ public class SudokuBoard {
 			JOptionPane.showMessageDialog(null, "틀렸습니다. 다시 시도해보세요.");
 		}
 	}
-	
+	 
 	public int returnEmpty() { return empty; }
-
+	public String returnDif() { 
+		if (difficulty == 1)
+			return "쉬움";
+		else if (difficulty == 2)
+			return "보통";
+		else
+			return "어려움";
+	}
+	public int[][] returnAnswer() { return answer; }
 	public int[][] contents() { return game_board; }
 }

@@ -3,7 +3,7 @@ package sudoku;
 public class InputNumber {
 	private int number;
 	
-	public InputNumber(int b) {
+	public InputNumber() {
 		number = 1;
 	}
 	

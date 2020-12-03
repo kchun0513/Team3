@@ -1,4 +1,4 @@
-package Sudoku;
+package sudoku;
 
 import java.awt.*;
 import javax.swing.*;
@@ -33,8 +33,8 @@ public class SudokuWriter extends JPanel {
 	/** 창에 row 번째 행 col 번째 열의 칸을 그리고 i를 적거나 적지 않음 */
 	public void paintPiece(Graphics g, int i, int col, int row) {
 		int s = size;
-		int x_pos = size + s * col;
-		int y_pos = size + s * row;
+		int x_pos = s * (1+col);
+		int y_pos = s * (1+row);
 		g.setColor(Color.white);
 		g.fillRect(x_pos, y_pos, s, s);
 		g.setColor(Color.black);
