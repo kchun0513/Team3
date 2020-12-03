@@ -10,6 +10,7 @@ public class Numberbutton extends JButton implements ActionListener {
 	public Numberbutton(InputNumber n, SudokuFrame v) {
 		number = n;
 		view = v;
+		addActionListener(this);
 	}
 	
 	public void actionPerformed(ActionEvent e) {
