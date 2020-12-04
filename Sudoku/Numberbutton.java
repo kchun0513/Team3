@@ -16,7 +16,5 @@ public class Numberbutton extends JButton implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String s = getText();
 		number.select(Integer.parseInt(s));
-		frame.number_update(number.valueOf());
-		System.out.println("" + number.valueOf());
 	}
 }
