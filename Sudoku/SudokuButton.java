@@ -1,30 +1,27 @@
 package sudoku;
 
-import javax.swing.*;
 import java.awt.event.*;
-import java.awt.*;
+import javax.swing.*;
 
-public class SudokuButton extends JButton implements ActionListener{
-	
+public class SudokuButton extends JButton implements ActionListener {
 	private SudokuBoard board;
+	private InputNumber number;
 	private SudokuFrame frame;
 	private int x;
 	private int y;
 
-	public SudokuButton(int a, int b, SudokuBoard n, SudokuFrame f) {
+	public SudokuButton(int a, int b, SudokuBoard s, SudokuFrame f, InputNumber n) {
 		x = a;
 		y = b;
-		board = n;
+		number = n;
+		board = s;
 		frame = f;
 		addActionListener(this);
 	}
 		
 	public void actionPerformed(ActionEvent e) {
-		int n = frame.return_input();
+		int n = number.valueOf();
 		board.checkAnswer(x, y, n);
 		frame.update();
-		System.out.println("적용 완료!");
 	}
-	
-	
 }
