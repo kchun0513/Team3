@@ -43,6 +43,7 @@ public class SudokuFrame extends JFrame {
 			for (int y = 0; y < board_size; y++) {
 				sb[x][y] = new SudokuButton(x,y, board, this);
 				sb[x][y].setBounds((x+1)*size, (y+1)*size, size, size);
+				sb[x][y].setBackground(Color.white);
 				c.add(sb[x][y]);
 			}
 		
@@ -61,6 +62,12 @@ public class SudokuFrame extends JFrame {
 				else
 					sb[x][y].setText("");
 			}
+		
+		for (int i = 0; i < board_size; i++) {
+			if (i+1 == number.valueOf()) nb[i].setBackground(Color.yellow);
+			else nb[i].setBackground(Color.white);
+		}
+		
 		System.out.println("update check");
 	}
 	
