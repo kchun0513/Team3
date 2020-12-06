@@ -6,7 +6,7 @@ import java.util.*;
 public class SudokuBoard {
 	private int[][] answer;
 	private int[][] game_board;
-	private int board_size = 4;
+	private int board_size;
 	private int empty;
 	private int difficulty;
 	
@@ -151,15 +151,19 @@ public class SudokuBoard {
 	}
 	
 	private void shuffleRibbons(int a) {
+		int[][] r = new int[board_size][board_size];
+		for (int i = 0; i != board_size; i++)
+			for (int j = 0; j != board_size; j++)
+				r[i][j] = answer[i][j];
 		List<int[]> a1 = new ArrayList<int[]>();
 		List<int[]> a2 = new ArrayList<int[]>();
 		List<int[]> a3 = new ArrayList<int[]>();
 		int[][] result = new int[board_size][board_size];
 		if (board_size == 4) {
-			a1.add(answer[0]);
-			a1.add(answer[1]);
-			a2.add(answer[2]);
-			a2.add(answer[3]);
+			a1.add(r[0]);
+			a1.add(r[1]);
+			a2.add(r[2]);
+			a2.add(r[3]);
 			Collections.shuffle(a1);
 			Collections.shuffle(a2);
 			a1.addAll(a2);
@@ -168,12 +172,12 @@ public class SudokuBoard {
 		}
 		if (board_size == 6) {
 			if (a == 2) {
-				a1.add(answer[0]);
-				a1.add(answer[1]);
-				a2.add(answer[2]);
-				a2.add(answer[3]);
-				a3.add(answer[4]);
-				a3.add(answer[5]);
+				a1.add(r[0]);
+				a1.add(r[1]);
+				a2.add(r[2]);
+				a2.add(r[3]);
+				a3.add(r[4]);
+				a3.add(r[5]);
 				Collections.shuffle(a1);
 				Collections.shuffle(a2);
 				Collections.shuffle(a3);
@@ -182,9 +186,9 @@ public class SudokuBoard {
 			}
 			else {
 				for (int i = 0; i != 3; i++)
-					a1.add(answer[i]);
+					a1.add(r[i]);
 				for (int i = 3; i != 6; i++)
-					a2.add(answer[i]);
+					a2.add(r[i]);
 				Collections.shuffle(a1);
 				Collections.shuffle(a2);
 				a1.addAll(a2);
@@ -194,11 +198,11 @@ public class SudokuBoard {
 		}
 		if (board_size == 9) {
 			for (int i = 0; i != 3; i++)
-				a1.add(answer[i]);
+				a1.add(r[i]);
 			for (int i = 3; i != 6; i++)
-				a2.add(answer[i]);
+				a2.add(r[i]);
 			for (int i = 6; i != 9; i++)
-				a3.add(answer[i]);
+				a3.add(r[i]);
 			Collections.shuffle(a1);
 			Collections.shuffle(a2);
 			Collections.shuffle(a3);
